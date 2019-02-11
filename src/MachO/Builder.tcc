@@ -721,7 +721,7 @@ void Builder::build(SymbolCommand* symbol_command) {
   SegmentCommand& linkedit = *this->binary_->get_segment("__LINKEDIT");
   size_t delta = linkedit.file_offset() + linkedit.file_size();
   delta = delta - (symbol_command->strings_offset() + symbol_command->strings_size());
-  std::cout << std::hex << "delta:" << delta << std::endl;
+  //std::cout << std::hex << "delta:" << delta << std::endl;
   symtab.strsize = static_cast<uint32_t>(symbol_command->strings_size() + delta);
 
   symbol_command->originalData_.clear();

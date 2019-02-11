@@ -252,6 +252,7 @@ bool check_layout(const Binary& binary, std::string* error) {
     }
     offset += dic.data_size();
   }
+
   // Check consistency of Code Signature
   if (binary.has_code_signature()) {
     const CodeSignature& cs = binary.code_signature();
