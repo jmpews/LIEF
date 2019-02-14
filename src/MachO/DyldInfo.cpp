@@ -958,7 +958,7 @@ DyldInfo& DyldInfo::update_rebase_info(void) {
     if (address != rebase->address()) {
       if (rebase->address() < current_segment_start or rebase->address() >= current_segment_end) {
         SegmentCommand* segment = this->binary_->segment_from_virtual_address(rebase->address());
-        DCHECK_NE(segment, nullptr);
+        // DCHECK_NE(segment, nullptr);
 
         size_t index = this->binary_->segment_index(*segment);
 
@@ -1260,7 +1260,7 @@ DyldInfo& DyldInfo::update_weak_bindings(const DyldInfo::bind_container_t& bindi
     if (info->address() != address) {
       if (info->address() < current_segment_start or info->address() >= current_segment_end) {
         SegmentCommand* segment = this->binary_->segment_from_virtual_address(info->address());
-        DCHECK_NE(segment, nullptr);
+        // DCHECK_NE(segment, nullptr);
 
         size_t index = this->binary_->segment_index(*segment);
 
@@ -1547,7 +1547,7 @@ DyldInfo& DyldInfo::update_standard_bindings(const DyldInfo::bind_container_t& b
     if (info->address() != address) {
       if (info->address() < current_segment_start or info->address() >= current_segment_end) {
         SegmentCommand* segment = this->binary_->segment_from_virtual_address(info->address());
-        DCHECK_NE(segment, nullptr);
+        // DCHECK_NE(segment, nullptr);
 
         size_t index = this->binary_->segment_index(*segment);
 
